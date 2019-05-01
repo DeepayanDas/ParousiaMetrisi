@@ -1,4 +1,4 @@
-package parousiametrisi.loststars.loststarventures.com
+package parousiametrisi.loststars.loststarventures.com.core
 
 import android.app.Application
 import android.arch.lifecycle.Lifecycle
@@ -7,9 +7,7 @@ import android.arch.lifecycle.OnLifecycleEvent
 import android.arch.lifecycle.ProcessLifecycleOwner
 import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
 import parousiametrisi.loststars.loststarventures.com.logger.Logger
-import android.net.ConnectivityManager
 import android.content.IntentFilter
 import android.location.LocationManager
 import parousiametrisi.loststars.loststarventures.com.location.LocationChangeListener
@@ -22,7 +20,7 @@ class ParousiaMetrisiApp : Application(), LifecycleObserver {
     private val networkChangeListener: BroadcastReceiver = NetworkChangeListener()
 
     init {
-        Logger.logI(msg = "init")
+        Logger.logI(msg = "ParousiaMetrisiApp init")
         instance = this
     }
 
@@ -37,7 +35,7 @@ class ParousiaMetrisiApp : Application(), LifecycleObserver {
 
     override fun onCreate() {
         super.onCreate()
-        Logger.logI(msg = "Application onCreate")
+        Logger.logI(msg = "ParousiaMetrisiApp onCreate")
 
         ProcessLifecycleOwner.get()
             .lifecycle
